@@ -57,7 +57,7 @@ fun readFrames(adbSock: AdbSmartSocketClient, struct: Struct) {
     while (true) {
         // All frames have a single character code followed by a big-endian int
         val code = adbSock.readInput(1, "code")
-        val n = struct.unpack("!i", adbSock.readInput(4, "int4"))[0].absoluteValue
+        val n = struct.unpack("!I", adbSock.readInput(4, "int4"))[0]
         when {
             code.contentEquals("1".toByteArray()) -> {
                 if (n > 0) {
