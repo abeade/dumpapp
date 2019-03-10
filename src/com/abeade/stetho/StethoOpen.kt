@@ -92,7 +92,7 @@ fun findOnlyStethoSocket(device: String?, port: Int?): String? {
         when {
             processNames.size > 1 -> throw HumanReadableException(
                 "Multiple stetho-enabled processes available:\n" +
-                        processNames.fold("") { str, item -> "\t" + str + item + "\n" } +
+                        processNames.fold("") { str, item -> str + "\t" + item + "\n" } +
                         "Use -p <process> or the environment variable STETHO_PROCESS to select one"
             )
             lastSocketName == null -> throw HumanReadableException("No stetho-enabled processes running")

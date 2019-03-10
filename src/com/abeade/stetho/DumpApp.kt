@@ -18,8 +18,8 @@ fun main(args : Array<String>) {
             println("Missing <process>")
             exitProcess(1)
         } else {
-            process = args[2]
-            commands = args.copyOfRange(3, args.size)
+            process = args[1]
+            commands = args.copyOfRange(2, args.size)
         }
     }
 
